@@ -15,14 +15,25 @@ message CalculatorResponse {
 }
 
 message PrimesRequest {
-    int32 number = 1;
+    int32 number = 3;
 }
 
 message PrimesResponse {
-    int32 prime = 1;
+    int32 prime = 4;
+}
+
+
+
+message AvgRequest {
+    int32 avg = 5;
+}
+
+message AvgResponse {
+    int32 avg = 6;
 }
 
 service CalculatorService {
     rpc Sum (CalculatorRequest) returns (CalculatorResponse);
     rpc Primes (PrimesRequest) returns (stream PrimesResponse);
+    rpc avg (stream AvgRequest) returns (AvgResponse);
 }
